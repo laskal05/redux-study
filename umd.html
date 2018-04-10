@@ -6,7 +6,6 @@
   <body>
     <div id="redux">Redux property</div>
   </body>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/expect/1.20.2/expect.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"></script>
   <script type="text/javascript">
     for ( var property in Redux ) {
@@ -15,20 +14,5 @@
         document.body.appendChild(p);
         document.getElementById(property).innerHTML = " - " + property;
     }
-
-    const counter = (state = 0, action) => {
-      switch(action.type) {
-        case 'INCREMENT':
-          return state + 1;
-        case 'DECREMENT':
-          return state - 1;
-        default:
-          return state;
-      }
-    };
-    const hoge = expect(
-      counter(1, { type: 'INCREMENT' })
-    ).toEqual(2);
-    console.log(hoge);
   </script>
 </html>
