@@ -1,6 +1,4 @@
 import { createStore, combineReducers } from 'redux';
-// const { createStore, combineReducers } = Redux;
-// const store = createStore(todos);
 
 const todo = (state, action) => {
   switch(action.type) {
