@@ -1,0 +1,37 @@
+{
+  "name": "redux-study",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laskal05/redux-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laskal05/redux-study/issues"
+  },
+  "homepage": "https://github.com/laskal05/redux-study#readme",
+  "dependencies": {
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-register": "^6.26.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-1"
+    ]
+  }
+}
