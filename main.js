@@ -1,4 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { createStore, combineReducers } from 'redux';
+
+import TodoApp from './src/components/TodoApp';
 
 const todo = (state, action) => {
   switch(action.type) {
@@ -50,22 +54,32 @@ const todoApp = combineReducers({
 });
 const store = createStore(todoApp);
 
-console.log('====== Current State ======');
-console.log(store.getState());
+const render = () => {
+  ReactDOM.render(
+    <TodoApp />,
+    document.getElementById('root')
+  );
+};
 
-store.dispatch({  
-  type: 'ADD_TODO',
-  id: '0',
-  text: 'Learn Redux'
-});
-console.log('====== State after ADD_TODO ======');
-console.log(store.getState());
+store.subscribe(render);
+render();
 
-store.dispatch({
-  type: 'SET_VISIBILITY_FILTER',
-  filter: 'SHOW_COMPLETED'
-})
-
-console.log('====== State after SET_VISIBILITY_FILTER ======');
-console.log(store.getState());
-console.log('All test passed!');
+// console.log('====== Current State ======');
+// console.log(store.getState());
+// 
+// store.dispatch({  
+//   type: 'ADD_TODO',
+//   id: '0',
+//   text: 'Learn Redux'
+// });
+// console.log('====== State after ADD_TODO ======');
+// console.log(store.getState());
+// 
+// store.dispatch({
+//   type: 'SET_VISIBILITY_FILTER',
+//   filter: 'SHOW_COMPLETED'
+// })
+// 
+// console.log('====== State after SET_VISIBILITY_FILTER ======');
+// console.log(store.getState());
+// console.log('All test passed!');
