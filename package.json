@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build": "webpack",
+    "postbuild": "open index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,14 +20,20 @@
   },
   "homepage": "https://github.com/laskal05/redux-study#readme",
   "dependencies": {
-    "redux": "^4.0.0"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "redux": "^4.0.0",
+    "webpack-cli": "^2.1.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "babel-register": "^6.26.0"
+    "babel-register": "^6.26.0",
+    "webpack": "^4.6.0"
   },
   "babel": {
     "presets": [
