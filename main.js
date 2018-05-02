@@ -4,6 +4,23 @@ import { createStore, combineReducers } from 'redux';
 
 import TodoApp from './src/components/TodoApp';
 
+export const getVisibleTodos = (todos, filter) => {
+  switch(filter) {
+    case 'SHOW_ALL':
+      return todos;
+    case 'SHOW_COMPLETED':
+      return todos.filter(
+        t => t.completed
+      );
+    case 'SHOW_ACTIVE':
+      return todos.filter(
+        t => !t.completed
+      );
+    default:
+      return todos;
+  }
+};
+
 const todo = (state, action) => {
   switch(action.type) {
     case 'ADD_TODO':
@@ -57,7 +74,7 @@ export const store = createStore(todoApp);
 
 const render = () => {
   ReactDOM.render(
-    <TodoApp todos={store.getState().todos} />,
+    <TodoApp {...store.getState()} />,
     document.getElementById('root')
   );
 };

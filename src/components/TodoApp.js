@@ -1,10 +1,30 @@
 import React, { Component } from 'react';
-import { store } from '../../main';
+import { store, getVisibleTodos } from '../../main';
 
 let nextTodoId = 0;
 
+const FilterLink = ({ filter, current, children }) => {
+  if ( filter == current ) {
+    return <span>{children}</span>
+  }
+
+  return (
+    <a href="#" onClick={ e => {
+      e.preventDefault();
+      store.dispatch({
+        type: 'SET_VISIBILITY_FILTER',
+        filter   
+      });
+    }}>
+      {children}
+    </a>
+  );
+};
+
 class TodoApp extends Component {
   render() {
+    const { todos, visibilityFilter } = this.props;
+    const visibleTodos = getVisibleTodos(todos, visibilityFilter);
     return(
       <div>
         <input ref={node => {
@@ -23,7 +43,7 @@ class TodoApp extends Component {
         </button>
         {
           <ul>
-            {this.props.todos.map(todo => 
+            {visibleTodos.map(todo => 
               <li key={todo.id}
                 onClick={() => {
                   store.dispatch({
@@ -44,6 +64,30 @@ class TodoApp extends Component {
             )}
           </ul>
         }
+        <p>
+          Show:
+          {' '}
+          <FilterLink
+            filter='SHOW_ALL'
+            current={visibilityFilter}
+          >
+            All
+          </FilterLink>
+          {' '}
+          <FilterLink
+            filter='SHOW_ACTIVE'
+            current={visibilityFilter}
+          >
+            Active
+          </FilterLink>
+          {' '}
+          <FilterLink
+            filter='SHOW_COMPLETED'
+            current={visibilityFilter}
+          >
+            Completed
+          </FilterLink>
+        </p>
       </div>
     );
   }
