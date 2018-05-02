@@ -16,7 +16,7 @@ class TodoApp extends Component {
             'text': this.input.value,
             'id'  : nextTodoId++
           });
-          console.log(this.props.todos);
+          console.log(store.getState().todos);
           this.input.value = '';
         }}>
           Add Todo
@@ -24,7 +24,21 @@ class TodoApp extends Component {
         {
           <ul>
             {this.props.todos.map(todo => 
-              <li key={todo.id}>
+              <li key={todo.id}
+                onClick={() => {
+                  store.dispatch({
+                    type: 'TOGGLE_TODO',
+                    id: todo.id
+                  });
+                  console.log(store.getState().todos);
+                }}
+                style={{
+                  textDecoration:
+                    todo.completed ?
+                      'line-through' :
+                      'none'
+                }}
+              >
                 {todo.text}
               </li>
             )}
