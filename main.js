@@ -52,11 +52,12 @@ const todoApp = combineReducers({
   todos,
   visibilityFilter
 });
-const store = createStore(todoApp);
+
+export const store = createStore(todoApp);
 
 const render = () => {
   ReactDOM.render(
-    <TodoApp />,
+    <TodoApp todos={store.getState().todos} />,
     document.getElementById('root')
   );
 };
