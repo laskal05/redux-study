@@ -16,7 +16,7 @@ class TodoApp extends Component {
             'text': this.input.value,
             'id'  : nextTodoId++
           });
-          console.log(store.getState());
+          console.log(this.props.todos);
           this.input.value = '';
         }}>
           Add Todo
