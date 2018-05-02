@@ -16,8 +16,13 @@ $ npm install
 ```
 
 ### Run
+- On Node.js
 ```
 $ npm start
+```
+- On HTML (Set `$ open html` on postbuild)
+```
+$ npm run build
 ```
 
 ### Test
