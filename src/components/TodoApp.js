@@ -118,6 +118,9 @@ const TodoApp = ({
   <div>
     <AddTodo
       onAddClick={text => {
+        if(text == '') {
+          return;
+        }
         store.dispatch({
           'type': 'ADD_TODO',
           'id'  : nextTodoId++,
