@@ -81,23 +81,3 @@ const render = () => {
 
 store.subscribe(render);
 render();
-
-// console.log('====== Current State ======');
-// console.log(store.getState());
-// 
-// store.dispatch({  
-//   type: 'ADD_TODO',
-//   id: '0',
-//   text: 'Learn Redux'
-// });
-// console.log('====== State after ADD_TODO ======');
-// console.log(store.getState());
-// 
-// store.dispatch({
-//   type: 'SET_VISIBILITY_FILTER',
-//   filter: 'SHOW_COMPLETED'
-// })
-// 
-// console.log('====== State after SET_VISIBILITY_FILTER ======');
-// console.log(store.getState());
-// console.log('All test passed!');
