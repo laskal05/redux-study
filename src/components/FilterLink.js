@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { store } from '../../main';
 import Link from './Link';
 
 class FilterLink extends Component {
 
   componentDidMount() {
-    this.unsubscribe = store.subscribe(() =>
+    const { store } = this.props;
+    this.unsubscribe = this.props.store.subscribe(() =>
       this.forceUpdate()
     );
   }
@@ -17,6 +17,7 @@ class FilterLink extends Component {
 
   render() {
     const props = this.props;
+    const { store } = props;
     const state = store.getState();
 
     return (

@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { store } from '../../main';
-
 let nextTodoId = 0;
 
-const AddTodo = () => {
+const AddTodo = ({store}) => {
   let input;
   return(
     <div>
