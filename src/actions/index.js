@@ -4,7 +4,7 @@ const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
 export const addTodo = (id, text) => {
   return {
-    'type': ADD_TODO,
+    type: ADD_TODO,
     id,
     text
   };
@@ -12,7 +12,7 @@ export const addTodo = (id, text) => {
 
 export const toggleTodo = (id) => {
   return {
-    'type': TOGGLE_TODO,
+    type: TOGGLE_TODO,
     id
   };
 };
