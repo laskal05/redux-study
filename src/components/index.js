@@ -7,9 +7,9 @@ import Footer from './Footer';
 const TodoApp = () => (
   <div>
     <AddTodo />
+    <VisibleTodoList />
+    <Footer />
   </div>
 );
 
-    // <VisibleTodoList store={store} />
-    // <Footer store={store} />
 export default TodoApp;

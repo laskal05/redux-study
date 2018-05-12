@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { AddTodoAction } from '../actions/';
+import * as Action from '../actions/';
 
 let nextTodoId = 0;
 
@@ -9,6 +9,7 @@ let AddTodo = ({
   dispatch
 }) => {
   let input;
+
   return(
     <div>
       <input ref={node => {
@@ -18,7 +19,7 @@ let AddTodo = ({
         if(input.value == '') {
           return;
         }
-        dispatch(AddTodoAction(
+        dispatch(Action.addTodo(
           nextTodoId++,
           input.value
         ));
