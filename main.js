@@ -23,12 +23,9 @@ export const getVisibleTodos = (todos, filter) => {
   }
 };
 
-export const store = createStore(todoApp);
-
 ReactDOM.render(
   <Provider store={createStore(todoApp)}>
     <TodoApp />
   </Provider>,
   document.getElementById('root')
 );
-
