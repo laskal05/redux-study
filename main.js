@@ -24,12 +24,11 @@ export const getVisibleTodos = (todos, filter) => {
 };
 
 export const store = createStore(todoApp);
-//   <Provider store={createStore(todoApp)}>
-//     <TodoApp />
-//   </Provider>,
 
 ReactDOM.render(
-  <TodoApp store={createStore(todoApp)} />,
+  <Provider store={createStore(todoApp)}>
+    <TodoApp />
+  </Provider>,
   document.getElementById('root')
 );
 

@@ -1,8 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { AddTodoAction } from '../actions/';
 
 let nextTodoId = 0;
 
-const AddTodo = ({store}) => {
+let AddTodo = ({
+  dispatch
+}) => {
   let input;
   return(
     <div>
@@ -13,11 +18,10 @@ const AddTodo = ({store}) => {
         if(input.value == '') {
           return;
         }
-        store.dispatch({
-          'type': 'ADD_TODO',
-          'id'  : nextTodoId++,
-          'text': input.value
-        });
+        dispatch(AddTodoAction(
+          nextTodoId++,
+          input.value
+        ));
         input.value = '';
       }}>
         Add Todo
@@ -25,5 +29,10 @@ const AddTodo = ({store}) => {
     </div>
   );
 };
+
+AddTodo = connect(
+  null,
+  null
+)(AddTodo);
 
 export default AddTodo;
