@@ -1,29 +1,22 @@
-import { getVisibleTodos } from '../../main';
+import { connect } from 'react-redux';
+
+import Link from '../components/Link';
 import * as Action from '../actions/';
 
-export const mapStateToProps = (
+const mapStateToProps = (
   state,
   ownProps
 ) => {
   return {
-    todos: getVisibleTodos(
-      state.todos,
-      state.visibilityFilter
-    ),
     active: ownProps.filter === state.visibilityFilter
   };
 };
 
-export const mapDispatchToProps = (
+const mapDispatchToProps = (
   dispatch,
   ownProps
 ) => {
   return {
-    onTodoClick: (id) => {
-      dispatch(
-        Action.toggleTodo(id)
-      );
-    },
     onClick: () => {
       dispatch(
         Action.setVisibilityFilter(ownProps.filter)
@@ -31,3 +24,8 @@ export const mapDispatchToProps = (
     }
   };
 };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Link);

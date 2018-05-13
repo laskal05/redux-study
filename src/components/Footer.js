@@ -1,23 +1,23 @@
 import React from 'react';
 
-import Link from './Link';
+import FilterLink from '../containers/FilterLink';
 
 const Footer = () => {
   return (
     <p>
       Show:
       {' '}
-      <Link filter='SHOW_ALL'>
+      <FilterLink filter='SHOW_ALL'>
         All
-      </Link>
+      </FilterLink>
       {' '}
-      <Link filter='SHOW_ACTIVE'>
+      <FilterLink filter='SHOW_ACTIVE'>
         Active
-      </Link>
+      </FilterLink>
       {' '}
-      <Link filter='SHOW_COMPLETED'>
+      <FilterLink filter='SHOW_COMPLETED'>
         Completed
-      </Link>
+      </FilterLink>
     </p>
   );
 };

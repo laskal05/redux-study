@@ -1,11 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import Todo from './Todo';
-import {
-  mapStateToProps,
-  mapDispatchToProps
-} from '../containers/';
 
 const TodoList = ({
   todos,
@@ -22,7 +17,4 @@ const TodoList = ({
   </ul>
 );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TodoList);
+export default TodoList;

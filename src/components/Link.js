@@ -1,10 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
-import {
-  mapStateToProps,
-  mapDispatchToProps
-} from '../containers/';
 
 const Link = ({
   active,
@@ -25,7 +19,4 @@ const Link = ({
   );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Link);
+export default Link;

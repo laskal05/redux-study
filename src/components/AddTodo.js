@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import * as Action from '../actions/';
 
@@ -30,10 +29,5 @@ let AddTodo = ({
     </div>
   );
 };
-
-AddTodo = connect(
-  null,
-  null
-)(AddTodo);
 
 export default AddTodo;

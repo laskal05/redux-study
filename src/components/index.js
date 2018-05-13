@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import AddTodo from './AddTodo';
-import TodoList from './TodoList';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
 import Footer from './Footer';
 
 const TodoApp = () => (
   <div>
     <AddTodo />
-    <TodoList />
+    <VisibleTodoList />
     <Footer />
   </div>
 );
