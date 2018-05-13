@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import AddTodo from './AddTodo';
-import VisibleTodoList from './VisibleTodoList';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
 import Footer from './Footer';
 
-const TodoApp = ({ store }) => (
+const TodoApp = () => (
   <div>
-    <AddTodo store={store} />
-    <VisibleTodoList store={store} />
-    <Footer store={store} />
+    <AddTodo />
+    <VisibleTodoList />
+    <Footer />
   </div>
 );
 

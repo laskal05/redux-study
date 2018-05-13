@@ -1,9 +1,14 @@
 import React from 'react';
 
+import * as Action from '../actions/';
+
 let nextTodoId = 0;
 
-const AddTodo = ({store}) => {
+let AddTodo = ({
+  dispatch
+}) => {
   let input;
+
   return(
     <div>
       <input ref={node => {
@@ -13,11 +18,10 @@ const AddTodo = ({store}) => {
         if(input.value == '') {
           return;
         }
-        store.dispatch({
-          'type': 'ADD_TODO',
-          'id'  : nextTodoId++,
-          'text': input.value
-        });
+        dispatch(Action.addTodo(
+          nextTodoId++,
+          input.value
+        ));
         input.value = '';
       }}>
         Add Todo
