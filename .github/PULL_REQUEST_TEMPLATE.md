@@ -1,15 +1,11 @@
 ## New Pull Request
-This is a new pull request.
+This pull request is due to do something.
 
 ### Tasks
- - [ ] Task1
- - [ ] Task2
- - [ ] Task3
+ - [ ] Task
 
 ### Remarks
- - Remark1
- - Remark2
- - Remark3
+ - Remark
 
 ### Links
  - Link

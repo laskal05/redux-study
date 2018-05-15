@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "build": "webpack",
-    "postbuild": "open index.html",
+    "postbuild": "http-server",
     "test": "jenkins-mocha test/*"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "babel-register": "^6.26.0",
     "danger": "^3.6.1",
     "expect": "^22.4.3",
+    "http-server": "^0.11.1",
     "jenkins-mocha": "^6.0.0",
     "webpack": "^4.6.0"
   },
