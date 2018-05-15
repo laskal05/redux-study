@@ -1,5 +1,5 @@
 ## New Pull Request
-This pull request is due to doing something.
+This pull request is due to do something.
 
 ### Tasks
  - [ ] Task
